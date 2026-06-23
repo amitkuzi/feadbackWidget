@@ -1,0 +1,65 @@
+{
+  "name": "@amitkuzi/feedback-widget",
+  "version": "0.1.0",
+  "description": "Storage-agnostic React feedback widget + admin inbox. Clients leave comments on any page; you collect them as tasks. Ships a Firestore adapter; bring your own backend.",
+  "license": "MIT",
+  "author": "amitkuzi",
+  "repository": {
+    "type": "git",
+    "url": "github:amitkuzi/feadbackWidget"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./firestore": {
+      "types": "./dist/adapters/firestore.d.ts",
+      "import": "./dist/adapters/firestore.js",
+      "require": "./dist/adapters/firestore.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "firebase": ">=10",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "firebase": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "firebase": "^11.9.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5"
+  },
+  "keywords": [
+    "feedback",
+    "widget",
+    "react",
+    "firestore",
+    "bug-report",
+    "annotation",
+    "comments"
+  ]
+}
